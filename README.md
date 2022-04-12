@@ -10,5 +10,5 @@ HOW TO RUN:
 ```
 git clone https://github.com/jamie-the-ducc/Discord-Index-Scanner
 cd ./Discord-Index-Scanner
-python -m discord_index_scanner.py
+python discord_index_scanner.py
 ```
