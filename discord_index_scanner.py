@@ -25,7 +25,7 @@ try:
     from colorama import Fore, Style, init
 except ImportError:
     os.system("python -m pip install colorama")
-    from colorama import Fore, Style
+    from colorama import Fore, Style, init
 
 init()
 print(Style.BRIGHT, end="")
@@ -77,7 +77,7 @@ class DiscordIndexScanner:
             if path:
                 self.clean_index(path)
         if detected.count(None) == len(detected):
-            print(f"{Fore.GREEN}[+] No malware found!{Fore.WHITE}")
+            print(f"{Fore.GREEN}[+] No malware found!{Fore.WHITE}\n")
         for client in self.get_valid_paths():
             self.index_results(client)\
 
