@@ -4,7 +4,7 @@ Verifies that Discord's `index.js` file has not been tampered with or compromise
 
 ## DOESN'T WORK WITH DISCORD-PTB FOR SOME REASON
 
-!["DiscordIndexScanner"](https://i.imgur.com/l2odyn6.png)
+!["DiscordIndexScanner"](https://i.imgur.com/8sBCGl6.png)
 
 HOW TO RUN:
 ```
