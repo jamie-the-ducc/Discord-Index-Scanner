@@ -78,7 +78,6 @@ class DiscordIndexScanner:
                 self.clean_index(path)
         if detected.count(None) == len(detected):
             print(f"{Fore.GREEN}[+] No malware found!{Fore.WHITE}")
-        print() # for spacing
         for client in self.get_valid_paths():
             self.index_results(client)
 
