@@ -5,3 +5,10 @@ Verifies that Discord's index.js file has not been tampered with or compromised.
 ## DOESN'T WORK WITH DISCORD-PTB FOR SOME REASON
 
 !["DiscordIndexScanner"](https://i.imgur.com/l2odyn6.png)
+
+HOW TO RUN:
+```
+git clone https://github.com/jamie-the-ducc/Discord-Index-Scanner
+cd ./Discord-Index-Scanner
+python -m discord_index_scanner.py
+```
