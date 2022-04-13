@@ -87,10 +87,10 @@ class DiscordIndexScanner:
                     paths.append((client, path[0]))
         return paths
 
-    def clean_index(self, path:str) -> None:
+    def clean_index(self, path:tuple) -> None:
         # Overwrites index.js with a clean version of the code
-        print(f"{Fore.GREEN}[+] Cleaning '{path}{Fore.WHITE}'")
-        with open(path, "w") as f:
+        print(f"{Fore.GREEN}[+] Cleaning '{path[0]}' {Fore.WHITE}")
+        with open(path[1], "w") as f:
             f.write(self.index_code)
 
     def check_index(self, client:str, path:str) -> str:
@@ -99,20 +99,20 @@ class DiscordIndexScanner:
             index = f.read()
             if index != self.index_code:
                 print(f"{Fore.RED}[!] Client '{client}' may be injected with malicious code.{Fore.WHITE}")
-                return path
+                return client, path
 
     def index_results(self, client:tuple) -> None:
         # Prints the Discord directories that have been scanned
         print(f"{Fore.BLUE}[#] {client[0]} is safe.")
 
-    def scan_index(self, detected:list=[]) -> None:
-        # manages the different directories being scanned
-        for path in self.get_valid_paths():
-            detected.append(self.check_index(path[0], path[1]))       
-        for path in detected:
+    # defining vars like that probably isn't the best practice, but hey, it works!
+    def scan_index(self, x=0, y=0) -> None:
+        # manages the different directories being scanned 
+        for path in [self.check_index(p[0], p[1]) for p in self.get_valid_paths()] :
             if path:
+                y += 1
                 self.clean_index(path)
-        if detected.count(None) == len(detected):
+        if y == x:
             print(f"{Fore.GREEN}[+] No malicious code found!{Fore.WHITE}")
         for client in self.get_valid_paths():
             self.index_results(client)
