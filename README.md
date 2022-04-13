@@ -8,7 +8,7 @@ Index.js injection is when a hacker injects malicious code into your Discord cli
 
 ## DOESN'T WORK WITH DISCORD-PTB FOR SOME REASON
 
-!["DiscordIndexScanner"](https://i.imgur.com/ERuc4aV.png)
+!["DiscordIndexScanner"](https://i.imgur.com/EWE3Tu7.png)
 
 HOW TO RUN:
 ```
