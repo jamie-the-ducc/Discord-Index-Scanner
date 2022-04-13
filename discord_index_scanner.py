@@ -106,13 +106,13 @@ class DiscordIndexScanner:
         print(f"{Fore.BLUE}[#] {client[0]} is safe.")
 
     # defining vars like that probably isn't the best practice, but hey, it works!
-    def scan_index(self, x=0, y=0) -> None:
+    def scan_index(self, x=0) -> None:
         # manages the different directories being scanned 
         for path in [self.check_index(p[0], p[1]) for p in self.get_valid_paths()] :
             if path:
-                y += 1
+                x += 1
                 self.clean_index(path)
-        if y == x:
+        if x == 0:
             print(f"{Fore.GREEN}[+] No malicious code found!{Fore.WHITE}")
         for client in self.get_valid_paths():
             self.index_results(client)
