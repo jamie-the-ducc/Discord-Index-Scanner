@@ -77,8 +77,6 @@ class DiscordIndexScanner:
             "discord_desktop_core",
             "index.js",
         )
-        # list of valid discord paths to scan
-        self.valid_paths = self.get_valid_paths()
         # The original unaltered index.js code
         self.index_code = "module.exports = require('./core.asar');"
 
@@ -136,21 +134,21 @@ class DiscordIndexScanner:
                 )
                 return client, path
 
-    def index_results(self, client: tuple) -> None:
+    def index_results(self, client: str) -> None:
         # Prints the Discord directories that have been scanned
-        print(f"{Fore.BLUE}[#] {client[0]} is safe.")
+        print(f"{Fore.BLUE}[#] {client} is safe.")
 
     # defining vars like that probably isn't the best practice, but hey, it works!
     def scan_index(self, found_malware: bool = False) -> None:
         # manages the different directories being scanned
-        for path in [self.check_index(p[0], p[1]) for p in self.valid_paths]:
+        for path in [self.check_index(p[0], p[1]) for p in self.get_valid_paths()]:
             if path:
                 found_malware = True
                 self.clean_index(path)
         if not found_malware:
             print(f"{Fore.GREEN}[+] No malicious code found!{Fore.WHITE}")
-        for client in self.valid_paths:
-            self.index_results(client)
+        for client in self.get_valid_paths():
+            self.index_results(client[0])
 
     def main(self) -> None:
         # main function that does the things
