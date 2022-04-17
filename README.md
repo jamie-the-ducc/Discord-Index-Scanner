@@ -17,6 +17,7 @@ git clone "https://github.com/jamie-the-ducc/Discord-Index-Scanner"
 cd ./Discord-Index-Scanner
 python -m pip install -r requirements.txt
 python discord_index_scanner.py
+# enjoy :>
 ```
 
 TODO:
