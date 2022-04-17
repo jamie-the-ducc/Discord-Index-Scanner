@@ -163,3 +163,4 @@ class DiscordIndexScanner:
 if __name__ == "__main__":
     scanner = DiscordIndexScanner()
     scanner.main()
+    input(f"{Style.BRIGHT}{Fore.YELLOW} < Press {Fore.WHITE}ENTER{Fore.YELLOW} to close the program >{Fore.YELLOW}")
