@@ -1,7 +1,7 @@
 # Discord Index Scanner (DIS) v1.0.0
 !["Title"](https://i.imgur.com/zyoo5rd.png)
 ## Coded with 💜 by [Jam!3](https://github.com/jamie-the-ducc) & Fa00j 
-### Last updated 17/04/2022 - DM me @ `[Jam!3]#4466`
+### Last updated 17/04/2022 - DM me @ `boxhead#4466` (`604855154365300753`)
 **Discord Index Scanner** scans Discord's `index.js` files for any signs of malicious code injection, as it's a main method for token grabbers and Discord malware, which a lot of people are unaware of or are unable to check. This script will do it for you!
 
 ### What is index.js injection?
